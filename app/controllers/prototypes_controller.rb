@@ -29,7 +29,7 @@ class PrototypesController < ApplicationController
   end
 
   def update
-    @prototype = Prototype.find(params[:id])
+    @prototype = Prototype.find(params[:id]) #@prototypeにする理由はrender :editのformにlocalsで渡す＠prototypeの記述と同じにしてrender :editで同じprototypeを表示するため
 
     if @prototype.update(prototype_params)
       redirect_to prototype_path(@prototype.id)
